@@ -1,5 +1,5 @@
 "use client";
-import Container from "@/components/Container";
+
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -29,7 +29,7 @@ export default function Home() {
 		window.addEventListener("resize", resize);
 
 		const drawGrid = () => {
-			ctx.strokeStyle = "rgba(50, 50, 50, 0.3)";
+			ctx.strokeStyle = "rgba(50, 50, 50, 0.01)";
 			ctx.lineWidth = 1;
 
 			for (let x = 0; x < canvas.width; x += 40) {
@@ -59,8 +59,8 @@ export default function Home() {
 			// Changed the gradient to work counterclockwise
 			const gradient = ctx.createConicGradient(centerX, centerY, angle);
 			gradient.addColorStop(0, "rgba(0, 255, 0, 0.1)");
-			gradient.addColorStop(0.08, "rgba(0, 255, 0, 0.05)");
-			gradient.addColorStop(0.01, "transparent");
+			gradient.addColorStop(0.05, "rgba(0, 255, 0, 0.05)");
+			gradient.addColorStop(0.1, "transparent");
 
 			ctx.fillStyle = gradient;
 			ctx.beginPath();
